@@ -10,5 +10,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: docker build . -t 8910792003/gh-actions-next
-    - run: echo "dckr_pat_0yXKdLlzCGGmFsdyeNEC1Aqg5W0" | docker login -u 8910792003 --password-stdin
+    - run: echo "${{secrets.DOCKERHUB_TOKEN}}" | docker login -u 8910792003 --password-stdin
     - run: docker push 8910792003/gh-actions-next:latest
